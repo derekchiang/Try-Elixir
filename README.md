@@ -13,7 +13,8 @@ To run the site, make sure you have `mix` (it's shipped with Elixir) installed, 
 ## Roadmap
 
 1. Security!! We need to defend against malicious code.
-2. Add some interactive tutorials.
+2. Add syntax highlighting.
+3. Add some interactive tutorials.
 
 ## Resources
 
