@@ -2,13 +2,20 @@
 
 This is a project built with Elixir that uses Dynamo to serve web requests.
 
+## Run
+
 To run the site, make sure you have `mix` (it's shipped with Elixir) installed, then do:
 
 1. Get dependencies with: `mix deps.get`
 
 2. Run it: `mix server`
 
-Resources:
+## Roadmap
+
+1. Security!! We need to defend against malicious code.
+2. Add some interactive tutorials.
+
+## Resources
 
 * [Elixir website](http://elixir-lang.org/)
 * [Elixir getting started guide](http://elixir-lang.org/getting_started/1.html)
