@@ -14,10 +14,10 @@ defmodule CodeRouter do
     try do
       {result, _} = Code.eval_string(code)
       if is_tuple(result) do
-        cond do
-          :erlang.element(1, result) == :module ->
-            conn.resp 200, "Successfully compiled."
-          true ->
+        case result do
+          {:module, module_name, _, _} ->
+            conn.resp 200, "'#{module_name}' was successfully compiled."
+          others ->
             conn.resp 200, "Something went wrong!"
         end
       else
