@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>ACE in Action</title>
+	<link href="/static/css/bootstrap.min.css" rel="stylesheet">
+	<link href="/static/css/custom.css" rel="stylesheet">
+	<script src="/static/js/bootstrap.min.js"></script>
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+</head>
+<body>
+	<div id="content">
+		<div id="header">
+			<h1>Try <img id="logo" src="/static/img/elixir.png"></h1>
+		</div>
+		<div id="editor">1 + 1</div>
+		<button id="run-button">Run</button>
+	</div>
+	<textarea readonly id="output">Output will be put here</textarea>
+	<script src="/static/js/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+		var editor = ace.edit("editor");
+		editor.setTheme("ace/theme/monokai");
+		editor.getSession().setMode("ace/mode/elixir");
+		editor.setAutoScrollEditorIntoView(true);
+
+		$("#run-button").click(function() {
+			$.ajax({
+				type: "POST",
+				url: "/code",
+				data: {
+					"code": editor.getValue()
+				},
+				success: function(data) {
+					$("#output").val(data);
+				}
+			});
+		});
+		document.getElementById('editor').style.fontSize='20px';
+		editor.resize();
+	</script>
+</body>
+</html>
