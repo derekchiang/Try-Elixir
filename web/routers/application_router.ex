@@ -4,7 +4,10 @@ defmodule ApplicationRouter do
   forward "/code", to: CodeRouter
 
   get "/" do
-    conn = conn.assign(:title, "Welcome to Dynamo!")
     render conn, "index.html"
+  end
+
+  get "/*" do
+    redirect conn, to: "/"
   end
 end
