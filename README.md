@@ -10,6 +10,10 @@ To run the site, make sure you have `mix` (it's shipped with Elixir) installed, 
 
 2. Run it: `mix server`
 
+If `mix server` fails, try:
+
+    MIX_ENV=prod mix do compile, server
+
 ## Roadmap
 
 1. Security!! We need to defend against malicious code.
