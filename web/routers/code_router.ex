@@ -12,12 +12,12 @@ defmodule CodeRouter do
   post "/" do
     code = conn.params[:code]
     try do
-      {result, _} = Code.eval_string(code)
+      result = Safe.eval(code)
       if is_tuple(result) do
         case result do
           {:module, module_name, _, _} ->
             conn.resp 200, "'#{module_name}' was successfully compiled."
-          others ->
+          _ ->
             conn.resp 200, "Something went wrong!"
         end
       else
