@@ -2,6 +2,8 @@
 
 This is a project built with Elixir that uses Dynamo to serve web requests.
 
+A demo is live at: http://166.78.153.231:8888/
+
 ## Run
 
 To run the site, make sure you have `mix` (it's shipped with Elixir) installed, then do:
