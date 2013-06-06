@@ -1,7 +1,7 @@
 defmodule Safe do
   # TODO: come up with a list of banned modules
   # TODO: Add documentation to this module
-  @banned_modules [Code, System, IO, :compiler, :mnesia, :odbc, :inets, :wx, :hipe, :stdlib]
+  @banned_modules [Code, System, IO, File, :compiler, :mnesia, :odbc, :inets, :wx, :hipe, :stdlib]
 
   def eval(string) do
     { :ok, ast } = Code.string_to_ast(string)
