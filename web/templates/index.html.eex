@@ -29,6 +29,7 @@ HelloWorld.say_hello
 		editor.setTheme("ace/theme/monokai");
 		editor.getSession().setMode("ace/mode/elixir");
 		editor.setAutoScrollEditorIntoView(true);
+		editor.getSession().setUseWrapMode(true);
 
 		$("#run-button").click(function() {
 			$.ajax({
